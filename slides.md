@@ -191,7 +191,7 @@ More formally, sets contain no pair of elements `e1` and `e2` such that `e1.equa
 * EnumSet
 * SortedSet
   * NavigableSet
-    * TreeSet
+      * TreeSet
 * ...
 
 ---
