@@ -23,6 +23,7 @@ layout: true
 
 # Oxford Dictionary
 
+--
 >A group of things or people.
 
 --
@@ -48,6 +49,24 @@ layout: true
 - remove returns true if element existed
 - notice there's no way to get an element
 
+Iterable - Implementing this interface allows an object to be the target of the "for-each loop" statement.
+```java
+
+public interface Iterable<T> {
+    Iterator<T> iterator();
+    ...
+}
+```
+```java
+public interface Iterator<E> {
+        boolean hasNext();
+        E next();
+        default void remove() {
+            throw new UnsupportedOperationException("remove");
+        }
+        ...
+}
+```
 ---
 #Collections:
 * Array
