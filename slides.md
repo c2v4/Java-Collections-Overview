@@ -68,7 +68,7 @@ public interface Iterator<E> {
 }
 ```
 ---
-#Collections:
+# Collections:
 * Array
 * List
 * Set
@@ -76,7 +76,7 @@ public interface Iterator<E> {
 * Map
 ---
 count: false
-#Collections:
+# Collections:
 * ~~Array~~
 * List
 * Set
@@ -89,9 +89,9 @@ class: center, middle, inverse
 # Array
 
 ---
-###Array
+### Array
 
-#Array
+# Array
 
 
 An array is a container **object** that holds a fixed number of values of a single type. The length of an array is established when the array is created. After creation, its length is fixed.
@@ -223,8 +223,10 @@ More formally, sets contain no pair of elements `e1` and `e2` such that `e1.equa
 * Allows one _null_
 
 ???
-                      add      contains next     notes
-HashSet               O(1)     O(1)     O(h/n)   h is the table capacity
+
+|                      |add      |contains |next     |notes                  |
+|----------------------|---------|---------|---------|-----------------------|
+|HashSet               |O(1)     |O(1)     |O(h/n)   |h is the table capacity|
 ---
 ## LinkedHashSet
 * Ordered version of HashSet
