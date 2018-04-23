@@ -239,7 +239,7 @@ LinkedHashSet         O(1)     O(1)     O(1)
 
 * Specialized implementation to use with `Enum` types
 * All elements must come from one enum type
-* Extremally compact and efficient
+* Extremely compact and efficient
 * Enum Sets are represented by bit vectors
 * Good typesafe alternative to `int` based bit flags
 
@@ -438,12 +438,12 @@ public interface Map<K,V> {
 * Uses multiple locks to ensure performance
 ---
 ## More Computer Science!
-|                      |get      |containsKey|
-|----------------------|---------|-----------|
-|HashMap               |O(1)     |O(1)       |
-|LinkedHashMap         |O(1)     |O(1)       | 
-|TreeMap               |O(log n) |O(log n)   | 
-|ConcurrentHashMap     |O(1)     |O(1)       | 
+|                      |get      |containsKey| insert   | remove |
+|----------------------|---------|-----------|----------|--------|
+|HashMap               |O(1)     |O(1)       |O(1)      |O(1)    |
+|LinkedHashMap         |O(1)     |O(1)       |O(1)      |O(1)    | 
+|TreeMap               |O(log n) |O(log n)   |O(log n)  |O(log n)| 
+|ConcurrentHashMap     |O(1)     |O(1)       |O(1)      |O(1)    |
 ---
 ## Map is not a Collection
 If map is supposed to be a collection, it should be a collection of what?
