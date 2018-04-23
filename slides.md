@@ -45,7 +45,7 @@ layout: true
 
 ???
 
-- add returns true if collection was modified
+- add returns true if the collection was modified
 - remove returns true if element existed
 - notice there's no way to get an element
 
@@ -120,7 +120,7 @@ layout: true
 ## Properties:
 * Ordered
 
-The _List_ interface provides four methods for positional (indexed) access to list elements.  _Lists_ (like Java arrays) are zero based.
+The _List_ interface provides four methods for positional (indexed) access to list elements.  _Lists_ (like Java arrays) are zero-based.
 ```java    
     public interface List<E> extends Collection<E> {
 *       E get(int index);
@@ -134,13 +134,13 @@ The _List_ interface provides four methods for positional (indexed) access to li
     }
 ```
 * Allows duplicates
-* Usually allow storing _null_
+* Usually allows storing _null_
 
 ???
 > It is not inconceivable that someone might wish to implement a list that prohibits duplicates, by throwing runtime exceptions when the user attempts to insert them, but we expect this usage to be rare.
 
 * add shifts elements that are past provided index
-* keep in mind that ordered is not sorted
+* keep in mind that 'ordered' is not same as 'sorted'
 ---
 ## Types:
 * ArrayList
@@ -344,7 +344,7 @@ public interface Queue<E> extends Collection<E> {
 
 
 ???
-* Each of those operations have 2 forms: returning null when negative case or throwing NoSuchElementException
+* Each of those operations has 2 forms: returning null when a negative case or throwing NoSuchElementException
 * Highlighted method throw exception
 * Add can only return true or throw IllegalStateException if cannot be added due to Queue restriction
 
@@ -355,7 +355,7 @@ public interface Queue<E> extends Collection<E> {
   * Based on Priority Heap
   * Orders elements according to their `Comparable` implementation or by provided `Comparator`
 * BlockingQueue
-  * Additionally provides methods to wait for the queue to be empty to insert an element and a method to wait for the queue to have element to be retrieved
+  * Additionally provides methods to wait for the queue to be empty to insert an element and a method to wait for the queue to have an element to be retrieved
 * Deque
   * Supports inserting and removing elements from both ends
   * Name comes from Double Ended Queue 
@@ -404,22 +404,22 @@ public interface Map<K,V> {
 ---
 ## HashMap
 * Implementation based on Hash Table
-* Uses `hashCode` an `equals` method to determine key existance and to find value
+* Uses `hashCode` an `equals` method to determine key existence and to find value
 * Consists of _Buckets_, `hashCode` determines it
-* When collision happens, keys are checked with equals
-* Values are stored in LinkedList inside _Bucket_
-* In Java 8, when stored elements are comparable and there are 8 elements stored inside a bucket it gets transformed to Tree, when number gets to 6 it is transformed to LinkedList back again
+* When a collision happens, keys are checked with equals
+* Values are stored in LinkedList in _Buckets_ 
+* In Java 8, when stored elements are comparable and there are 8 elements stored inside a bucket it gets transformed to Tree, when the number gets to 6 it is transformed to LinkedList back again
 * Allows one `null` as a key and multiple `null` values
 * Does not guarantee order
 
 ???
-* Check `containsKey` in order to determine whether value is there, get can return `null` not only when the value is not present, but also when the value is `null` itself
+* Check `containsKey` in order to determine whether the value is there, get can return `null` not only when the value is not present, but also when the value is `null` itself
 
 ---
 ## LinkedHashMap
 * Similar to HashMap
 * Guarantees order
-* Slower than HashMap for inserting, removing entires
+* Slower than HashMap for inserting, removing entries
 * Faster iteration than HashMap
 ---
 ## TreeMap
