@@ -14,6 +14,65 @@ class: center, middle, inverse
 # Collection
 
 ---
+count: false
+class: center, middle, inverse
+
+# ~~Collection~~
+# Object
+
+---
+template: default
+layout: true
+
+### Object
+
+---
+```java
+public class Object {
+    
+    public boolean equals(Object obj) {
+        return (this == obj);
+    }
+    
+    public native int hashCode();
+
+    ...
+    
+}
+```
+---
+## Equals
+Indicates whether some other object is "equal to" this one.
+
+**Compares values for equality**. When an Object is a composite it is good to compare all non cached properties when checking equality.
+
+When not overridden it does reference comparison.
+--
+
+### Properties:
+
+* Reflexive: `x.equals(x)`
+* Symmetric: `x.equals(y)` == `y.equals(x)`
+* Transitive: `x.equals(y)` and `y.equals(z)` then `x.equals(z)`
+* Consistent: multiple invocations of `x.equals(y)` consistently return `true` or consistently return `false`, provided no information used in `equals` comparisons on the objects is modified
+* For any non-null reference value `x`, `x.equals(null)` should return `false`
+
+---
+### HashCode
+
+Calculates and returns a 'summary' of an object represented by `int` value.
+
+* Whenever it is invoked on the same object more than once during an execution of a Java application, the `hashCode` method must consistently return the same integer, provided no information used in `equals` comparisons on the object is modified
+* **If two objects are equal according to the `equals(Object)` method, then calling the `hashCode` method on each of the two objects must produce the same integer result**
+
+This is typically implemented by converting the internal address of the object into an integer, but this implementation technique is not required by the _Java_ programming language.
+
+---
+class: center, middle, inverse
+
+# Collection
+
+---
 template: default
 layout: true
 
