@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "static-server -o"
+    "start": "static-server -o",
     "serve": "browser-sync start -s -f . --ignore node_modules/ --open local"
   },
   "repository": {

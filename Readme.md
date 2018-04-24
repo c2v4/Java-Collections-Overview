@@ -9,4 +9,4 @@ In order to launch the presentation you have to have `node.js` installed
 ##Development:
 To ease the process of checking how does the presentation look like it is advised to use livereload. In order to do so please install it by running `sudo npm install -g browser-sync`.
 
-After installation simply run `npm serve`.
+After installation simply run `npm run serve`.
