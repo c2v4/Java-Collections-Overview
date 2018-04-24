@@ -268,8 +268,8 @@ More formally, sets contain no pair of elements `e1` and `e2` such that `e1.equa
 * HashSet
 * LinkedHashSet
 * EnumSet
-* SortedSet
-  * NavigableSet
+* *SortedSet*
+  * *NavigableSet*
       * TreeSet
 * ...
 
@@ -532,13 +532,60 @@ Should it check for key only or whole `Entry`?
 ???
 * If we want to make Map a Collection we can do it but we come into pitfalls
 ---
->This was by design. We feel that mappings are not collections and collections are not mappings. Thus, it makes little sense for Map to extend the Collection interface (or vice versa).
- 
->If a Map is a Collection, what are the elements? The only reasonable answer is "Key-value pairs", but this provides a very limited (and not particularly useful) Map abstraction. You can't ask what value a given key maps to, nor can you delete the entry for a given key without knowing what value it maps to.
- 
->Collection could be made to extend Map, but this raises the question: what are the keys? There's no really satisfactory answer, and forcing one leads to an unnatural interface.
- 
->Maps can be viewed as Collections (of keys, values, or pairs), and this fact is reflected in the three "Collection view operations" on Maps (keySet, entrySet, and values). While it is, in principle, possible to view a List as a Map mapping indices to elements, this has the nasty property that deleting an element from the List changes the Key associated with every element before the deleted element. That's why we don't have a map view operation on Lists. - [Java Collections API Design FAQ](https://docs.oracle.com/javase/8/docs/technotes/guides/collections/designfaq.html#a14)
+layout: false
+class: center, middle, inverse
+
+# Recap
+---
+template: default
+layout: true
+
+### Rule of thumb
+
+---
+
+* Single Value: *Collection*
+* Key-Value Pair: *Map*
+
+---
+count: false
+
+* Single Value: *Collection*
+  * Contains duplicates: *List*
+     * ArrayList **ArrayList**
+  * Does not contain duplicates
+* Key-Value Pair: *Map*
+
+---
+count: false
+
+* Single Value: *Collection*
+  * Contains duplicates: *List*
+     * ArrayList **ArrayList**
+  * Does not contain duplicates *Set*
+     * Ordered
+     * Unordered: **HashSet**
+* Key-Value Pair: *Map*
+  * Ordered
+  * Unordered: **HashMap**
+
+---
+count: false
+
+* Single Value: *Collection*
+  * Contains duplicates: *List*
+     * ArrayList **ArrayList**
+  * Does not contain duplicates *Set*
+     * Ordered
+         * Insertion **LinkedHashSet**
+         * Sorted **TreeSet**
+     * Unordered: **HashSet**
+* Key-Value Pair: *Map*
+      * Ordered
+          * Insertion **LinkedHashMap**
+          * Sorted **TreeMap**
+      * Unordered: **HashMap**
+
 ---
 layout: false
 # Resources
@@ -552,3 +599,20 @@ layout: false
 class: center, middle, inverse
 
 # That's all folks!
+---
+count:false
+layout: false
+class: center, middle, inverse
+
+# ~~That's all folks!~~
+# Almost!
+
+---
+count:false
+>This was by design. We feel that mappings are not collections and collections are not mappings. Thus, it makes little sense for Map to extend the Collection interface (or vice versa).
+ 
+>If a Map is a Collection, what are the elements? The only reasonable answer is "Key-value pairs", but this provides a very limited (and not particularly useful) Map abstraction. You can't ask what value a given key maps to, nor can you delete the entry for a given key without knowing what value it maps to.
+ 
+>Collection could be made to extend Map, but this raises the question: what are the keys? There's no really satisfactory answer, and forcing one leads to an unnatural interface.
+ 
+>Maps can be viewed as Collections (of keys, values, or pairs), and this fact is reflected in the three "Collection view operations" on Maps (keySet, entrySet, and values). While it is, in principle, possible to view a List as a Map mapping indices to elements, this has the nasty property that deleting an element from the List changes the Key associated with every element before the deleted element. That's why we don't have a map view operation on Lists. - [Java Collections API Design FAQ](https://docs.oracle.com/javase/8/docs/technotes/guides/collections/designfaq.html#a14)
